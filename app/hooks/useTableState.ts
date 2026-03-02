@@ -116,7 +116,7 @@ export function useTableState(initialRows: TableRowData[]) {
         }
         let currentId: string | null = id;
         while (currentId !== null) {
-          const parentId = parentMap.get(currentId) ?? null;
+          const parentId: string | null = parentMap.get(currentId) ?? null;
           if (parentId === null) break;
           const siblingIds = childrenMap.get(parentId)!;
           const sum = siblingIds.reduce(
